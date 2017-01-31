@@ -1,14 +1,27 @@
-# TODO : Your Project Name
+# CarsTrading
 
-TODO : Please provide a detailed project description.
-
+1. What is the proposed name for your Web application?
+    - CarsTrading
+2. Who is the target audience for your Web application?
+    - People who want to sell their used car to others.
+3. What problem is it intended to solve for the target audience?
+    - This applicaiton provides an easy way for people to sell their used cars. Users can create their own acount and put information of their cars into my web applicaion. Besides, they can also search cars' information if they want to buy cars.
+4. How will it meet the minimum project requirements?
+    - Most of the content will be freely accessible without a login. If users want to interact with each other, a login will be required which I'll store in my database. I'll use PayPal for payments. All public data will be accessible through RESTful services. All RESTful services will data in both JSON and XML formats.
+5. Why is your proposed Web application unique or creative beyond simply meeting the minimum requirements?
+    - My site will have a reputation system. Customer can review each transaction and rate the credit of the seller. Therefore,sellers will have thier own reputation. More over, my site will provide users with a disscsion board where users can share their opinions and experience.
+    
 ## Build status
 
-[![Build Status](https://travis-ci.org/infsci2560sp17/full-stack-web.svg?branch=master)](https://travis-ci.org/infsci2560sp17/full-stack-web-jim37)
+[![Build Status](https://travis-ci.org/infsci2560sp17/full-stack-web-jim37.svg?branch=master)](https://travis-ci.org/infsci2560sp17/full-stack-web-jim37)
+
+## Changelog
+
+[Changelog](CHANGELOG.md)
 
 ## Web Site
 
-[jim37's Website](https://shrouded-temple-81279.herokuapp.com/)
+[CarsTrading](https://shrouded-temple-81279.herokuapp.com/)
 
 ## Key Features
 
