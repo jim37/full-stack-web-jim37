@@ -13,7 +13,7 @@
     
 ## Build status
 
-[![Build Status](https://travis-ci.org/infsci2560sp17/full-stack-web-jim37.svg?branch=master)](https://travis-ci.org/infsci2560sp17/full-stack-web-jim37)
+[![Build Status](https://travis-ci.org/jim37/full-stack-web-jim37.svg?branch=master)](https://travis-ci.org/jim37/full-stack-web-jim37)
 
 ## Changelog
 
@@ -21,7 +21,7 @@
 
 ## Web Site
 
-[CarsTrading](https://shrouded-temple-81279.herokuapp.com/)
+[CarsTrading](https://frozen-escarpment-95504.herokuapp.com/)
 
 ## Key Features
 

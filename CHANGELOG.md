@@ -7,6 +7,14 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 ### Added
 - TBD.
 
+## [v1.3] - 2017-02-16
+### Added
+- Created an Entity: Car.java
+- Created a Repository: CarRepository.java
+- Created a RESTful web service and return JSON: CarsService.java
+- Created a MVC Controller and implement get and post methods: CarsController.java
+- Created a MVC Page and wire it to Repository: cars.html
+
 ## [v1.2] - 2017-01-28
 ### Added
 - Answered in README.md
@@ -22,6 +30,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 - Configured developer workspace.
 - Deployed to Heroku.
 
-[Unreleased]: https://github.com/infsci2560sp17/full-stack-web-jim37/compare/v1.2...HEAD
-[v1.2]: https://github.com/infsci2560sp17/full-stack-web-jim37/compare/v1.1...v1.2
-[v1.1]: https://github.com/infsci2560sp17/full-stack-web-jim37/compare/...v1.1
+[Unreleased]: https://github.com/jim37/full-stack-web-jim37/compare/v1.2...HEAD
+[v1.3]: https://github.com/jim37/full-stack-web-jim37/compare/v1.2...v1.3
+[v1.2]: https://github.com/jim37/full-stack-web-jim37/compare/v1.1...v1.2
+[v1.1]: https://github.com/jim37/full-stack-web-jim37/compare/...v1.1
