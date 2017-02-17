@@ -4,33 +4,33 @@
         <title>User Home</title>
     </head>
     <body>
-        <h1 data-th-inline="text">[[${#httpServletRequest.remoteUser}]]'s DVD's!</h1>
+        <h1 data-th-inline="text">[[${#httpServletRequest.remoteUser}]]'s CAR's!</h1>
 
         <div>
             <table style="border: 1px solid black">
                 <tr>
                     <th>ID</th>
-                    <th>Name</th>
+                    <th>Brand</th>
                     <th>Car Type</th>
                 </tr>                
-                <tr data-th-each="dvd : ${dvds}">
-                    <td data-th-text="${dvd.id}"></td>
-                    <td data-th-text="${dvd.title}"></td>
-                    <td data-th-text="${dvd.workoutType}"></td>
+                <tr data-th-each="car : ${cars}">
+                    <td data-th-text="${car.id}"></td>
+                    <td data-th-text="${car.title}"></td>
+                    <td data-th-text="${car.carType}"></td>
                 </tr>
             </table>
         </div>
         
         <hr />
-        Add DVD<br />
-        <form data-th-action="@{/dvds/add}" name="addDvdForm" method="post">
-            Title: <input type="text" name="title" /><br />
-            Workout Type:<br />
-            <input type="radio" name="workoutType" value="Unknown" checked="checked" /> Unknown<br />
-            <input type="radio" name="workoutType" value="Strength" /> Strength<br />
-            <input type="radio" name="workoutType" value="Cardio" /> Cardio<br />
-            <input type="radio" name="workoutType" value="CrossTrain" /> CrossTrain<br />
-            <input type="submit" value="Add Workout"/>
+        Add CAR<br />
+        <form data-th-action="@{/cars/add}" name="addCarForm" method="post">
+            Brand: <input type="text" name="title" /><br />
+            Car Type:<br />
+            <input type="radio" name="carType" value="SUV" checked="checked" /> SUV<br />
+            <input type="radio" name="carType" value="Truck" /> Truck<br />
+            <input type="radio" name="carType" value="Sports Car" /> Sports Car<br />
+            <input type="radio" name="carType" value="Luxury Car" /> Luxury Car<br />
+            <input type="submit" value="Add Car"/>
         </form>
         
         <hr />       

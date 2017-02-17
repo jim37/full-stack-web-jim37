@@ -25,7 +25,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 /**
  *
- * @author kolobj
+ * @author jim37
  */
 @RestController
 @RequestMapping("/public/api/cars")

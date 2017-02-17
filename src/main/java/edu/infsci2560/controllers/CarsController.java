@@ -22,7 +22,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 /**
  *
- * @author kolobj
+ * @author jim37
  */
 @Controller
 public class CarsController {
