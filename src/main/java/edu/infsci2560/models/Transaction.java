@@ -17,38 +17,37 @@ import org.apache.commons.lang3.builder.HashCodeBuilder;
  * @author jim37
  */
 @Entity
-public class Car {
+public class Transaction {
 
     private static final long serialVersionUID = 1L;
 
-    public enum CarType {
+    public enum TransactionType {
         Unknown,
-        Strength,
-        Cardio,
-        CrossTrain
+        Business,
+        Individual
     }
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     protected Long id;
-    protected String title;
-    protected CarType carType;
+    protected String time;
+    protected TransactionType transactionType;
 
-    public Car() {
+    public Transaction() {
         this.id = Long.MAX_VALUE;
-        this.title = null;
-        this.carType = CarType.Unknown;
+        this.time = null;
+        this.transactionType = TransactionType.Unknown;
     }
 
-    public Car(Long id, String name, CarType carType) {
+    public Transaction(Long id, String tim, TransactionType transactionType) {
         this.id = id;
-        this.title = name;
-        this.carType = carType;
+        this.time = tim;
+        this.transactionType = transactionType;
     }
 
     @Override
     public String toString() {
-        return "[ id=" + this.id + ", title=" + this.title + ", carType=" + this.carType + " ]";
+        return "[ id=" + this.id + ", time=" + this.time + ", transactionType=" + this.transactionType + " ]";
     }
 
     @Override
@@ -62,31 +61,31 @@ public class Car {
     }
 
     /**
-     * @return the name
+     * @return the tim
      */
-    public String getTitle() {
-        return title;
+    public String getTime() {
+        return time;
     }
 
     /**
-     * @param title the name to set
+     * @param time the tim to set
      */
-    public void setTitle(String title) {
-        this.title = title;
+    public void setTime(String time) {
+        this.time = time;
     }
 
     /**
-     * @return the workoutType
+     * @return the transactionType
      */
-    public CarType getCarType() {
-        return carType;
+    public TransactionType getTransactionType() {
+        return transactionType;
     }
 
     /**
-     * @param workoutType the workoutType to set
+     * @param transactionType the transactionType to set
      */
-    public void setCarType(CarType carType) {
-        this.carType = carType;
+    public void setTransactionType(TransactionType transactionType) {
+        this.transactionType = transactionType;
     }
 
     /**
