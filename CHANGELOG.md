@@ -14,6 +14,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 - Create 3 additional RESTful services that return JSON: ManagerService.java, SalesService.java, TransactionService.java
 - Create 3 additional MVC controllers: ManagerController.java, SalesController.java, TransactionController.java
 - Create 3 additional MVC pages: cars.html,register.html, manager.html
+  In login page, I added a register link. register.html leverages a RESTful service using AJAX through Manager.java and ManagerRepository.java
+
 
 ## [v1.3] - 2017-02-16
 ### Added
