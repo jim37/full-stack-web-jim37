@@ -83,3 +83,4 @@ public class Manager {
         this.email = email;
 
     }
+}
