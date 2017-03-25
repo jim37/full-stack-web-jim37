@@ -18,14 +18,14 @@ public class Manager {
     private Long id;
     private String firstName;
     private String lastName;
-	private String e-mail;
+	private String email;
 
     protected Manager() {}
 
-    public Manager(String firstName, String lastName, String e-mail) {
+    public Manager(String firstName, String lastName, String email) {
         this.firstName = firstName;
         this.lastName = lastName;
-		this.e-mail = e-mail;
+		this.email = email;
     }
 
     @Override
