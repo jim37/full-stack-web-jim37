@@ -23,7 +23,7 @@ Table.GridOne Td {
 function madeAjaxCall(){
  $.ajax({
   type: "post",
-  url: "/managers/add.htm",
+  url: "/managers/add",
   cache: false,    
   data:'firstName=' + $("#firstName").val() + "&lastName;=" + $("#lastName").val() + "&email;=" + $("#email").val(),
   success: function(response){

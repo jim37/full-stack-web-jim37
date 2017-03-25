@@ -18,6 +18,19 @@ public class Manager {
     private String firstName;
     private String lastName;
     private String email;
+	
+	protected Manager() {}
+	
+	public Manager(String firstName, String lastName, String email) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+		this.email = email;
+    }
+
+    @Override
+    public String toString() {
+        return String.format("Manager[firstName='%s', lastName='%s', email='%s']", getFirstName(), getLastName(), getEmail());
+    }
 
     /**
      * @return the firstName
