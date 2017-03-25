@@ -47,7 +47,7 @@ public class TransactionService {
     }
 
     @RequestMapping(method = RequestMethod.POST, consumes="application/json", produces = "application/json")
-    public ResponseEntity<Transactoin> create(@RequestBody Transaction transaction) {
+    public ResponseEntity<Transaction> create(@RequestBody Transaction transaction) {
         HttpHeaders headers = new HttpHeaders();
         return new ResponseEntity<>(repository.save(transaction), headers, HttpStatus.OK);
     }

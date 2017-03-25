@@ -11,5 +11,5 @@ import org.springframework.data.repository.CrudRepository;
 
 public interface ManagerRepository extends CrudRepository<Manager, Long> {
 
-    List<Customer> findByLastName(String lastName);
+    List<Manager> findByLastName(String lastName);
 }

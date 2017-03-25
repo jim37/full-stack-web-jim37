@@ -14,9 +14,9 @@ public class Sales {
         this.carId = null;
     }
 
-    public Sales(int id, String id) {
+    public Sales(int id, String carId) {
         this.id = id;
-        this.carId = id;
+        this.carId = carId;
     }
 
     public int getId() {
@@ -24,7 +24,7 @@ public class Sales {
     }
 
     public String getCarId() {
-        return id;
+        return carId;
     }
 
 }
