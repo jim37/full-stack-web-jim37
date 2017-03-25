@@ -25,6 +25,7 @@ public class Manager {
     public Manager(String firstName, String lastName, String e-mail) {
         this.firstName = firstName;
         this.lastName = lastName;
+		this.e-mail = e-mail;
     }
 
     @Override
