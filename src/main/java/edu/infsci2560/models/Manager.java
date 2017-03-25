@@ -15,37 +15,9 @@ public class Manager {
 
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
-    private Long id;
     private String firstName;
     private String lastName;
-	private String email;
-
-    protected Manager() {}
-
-    public Manager(String firstName, String lastName, String email) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-		this.email = email;
-    }
-
-    @Override
-    public String toString() {
-        return String.format("Manager[id=%d, firstName='%s', lastName='%s']", getId(), getFirstName(), getLastName());
-    }
-
-    /**
-     * @return the id
-     */
-    public Long getId() {
-        return id;
-    }
-
-    /**
-     * @param id the id to set
-     */
-    public void setId(Long id) {
-        this.id = id;
-    }
+    private String email;
 
     /**
      * @return the firstName
