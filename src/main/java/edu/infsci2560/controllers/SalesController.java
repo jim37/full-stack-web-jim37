@@ -29,15 +29,15 @@ public class SalesController {
     @Autowired
     private SalesRepository repository;
     
-    @RequestMapping(value = "sales", method = RequestMethod.GET)
+    @RequestMapping(value = "saless", method = RequestMethod.GET)
     public ModelAndView index() {        
-        return new ModelAndView("sales", "sales", repository.findAll());
+        return new ModelAndView("saless", "saless", repository.findAll());
     }
     
-    @RequestMapping(value = "sales/add", method = RequestMethod.POST, consumes="application/x-www-form-urlencoded", produces = "application/json")
+    @RequestMapping(value = "saless/add", method = RequestMethod.POST, consumes="application/x-www-form-urlencoded", produces = "application/json")
     public ModelAndView create(@ModelAttribute @Valid Sales sales, BindingResult result) {
         repository.save(sales);
-        return new ModelAndView("sales", "sales", repository.findAll());
+        return new ModelAndView("saless", "saless", repository.findAll());
     }
     
 }
