@@ -29,15 +29,15 @@ public class ManagerController {
     @Autowired
     private ManagerRepository repository;
     
-    @RequestMapping(value = "managers", method = RequestMethod.GET)
+    @RequestMapping(value = "manager", method = RequestMethod.GET)
     public ModelAndView index() {        
-        return new ModelAndView("managers", "managers", repository.findAll());
+        return new ModelAndView("manager", "manager", repository.findAll());
     }
     
-    @RequestMapping(value = "managers/add", method = RequestMethod.POST, consumes="application/x-www-form-urlencoded", produces = "application/json")
+    @RequestMapping(value = "manager/add", method = RequestMethod.POST, consumes="application/x-www-form-urlencoded", produces = "application/json")
     public ModelAndView create(@ModelAttribute @Valid Manager manager, BindingResult result) {
         repository.save(manager);
-        return new ModelAndView("managers", "managers", repository.findAll());
+        return new ModelAndView("manager", "manager", repository.findAll());
     }
     
 }
