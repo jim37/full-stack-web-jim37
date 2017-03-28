@@ -15,9 +15,5 @@ public class ApiController {
     public @ResponseBody Greeting index(@RequestParam(value="name", required=false, defaultValue="Stranger") String name) {
         return new Greeting(counter.incrementAndGet(), name);
     }
-	
-	@RequestMapping("/register")
-    public String register() {
-        return "register";
-    }
+
 }
