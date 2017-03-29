@@ -37,7 +37,7 @@ public class ManagerController {
     @RequestMapping(value = "manager/add", method = RequestMethod.POST, consumes="application/x-www-form-urlencoded", produces = "application/json")
     public ModelAndView create(@ModelAttribute @Valid Manager manager, BindingResult result) {
         repository.save(manager);
-        return new ModelAndView("manager", "manager", repository.findAll());
+        return new ModelAndView("register", "manager", repository.findAll());
     }
     
 }
