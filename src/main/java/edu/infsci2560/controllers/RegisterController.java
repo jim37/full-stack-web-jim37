@@ -15,9 +15,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class RegisterController {
     @Autowired 
-    @RequestMapping(value = "register")
+    @RequestMapping("/register")
     public String register() {        
         return "register";
     }
     
+}
 }
