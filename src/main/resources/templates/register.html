@@ -26,7 +26,7 @@ Table.GridOne Td {
                            <td>First Name</td>
 	                       <td><input type="text" name="firstName" /></td>
                   </tr>
-                  <tr>
+                  <tr>	
 	                       <td>Last Name</td> 
 	                       <td><input type="text" name="lastName" /></td>
                   </tr>
@@ -49,7 +49,7 @@ Table.GridOne Td {
                     <th>Last Name</th>
                     <th>Email</th>
                 </tr>                
-                <tr data-th-each="manager : ${manager}">
+                <tr data-th-each="manager : ${managers}">
                     <td data-th-text="${manager.firstName}"></td>
                     <td data-th-text="${manager.lastName}"></td>
                     <td data-th-text="${manager.email}"></td>
