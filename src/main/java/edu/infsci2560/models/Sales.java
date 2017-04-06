@@ -21,34 +21,27 @@ public class Sales {
 
     private static final long serialVersionUID = 1L;
 
-    public enum CarType {
-        Unknown,
-        Strength,
-        Cardio,
-        CrossTrain
-    }
-
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     protected Long id;
-    protected String title;
-    protected CarType carType;
+    protected String name;
+    protected String time;
 
     public Sales() {
         this.id = Long.MAX_VALUE;
-        this.title = null;
-        this.carType = CarType.Unknown;
+        this.name = null;
+        this.time = null;
     }
 
-    public Sales(Long id, String name, CarType carType) {
+    public Sales(Long id, String name, String time) {
         this.id = id;
-        this.title = name;
-        this.carType = carType;
+        this.name = name;
+        this.time = time;
     }
 
     @Override
     public String toString() {
-        return "[ id=" + this.id + ", title=" + this.title + ", carType=" + this.carType + " ]";
+        return "[ id=" + this.id + ", name=" + this.name + ", time=" + this.time + " ]";
     }
 
     @Override
@@ -65,28 +58,22 @@ public class Sales {
      * @return the name
      */
     public String getTitle() {
-        return title;
+        return name;
     }
 
     /**
      * @param title the name to set
      */
     public void setTitle(String title) {
-        this.title = title;
+        this.name = name;
     }
 
-    /**
-     * @return the workoutType
-     */
-    public CarType getCarType() {
-        return carType;
-    }
 
-    /**
-     * @param workoutType the workoutType to set
-     */
-    public void setCarType(CarType carType) {
-        this.carType = carType;
+    public String getTime() {
+        return time;
+    }
+    public void setTime(String time) {
+        this.time = time;
     }
 
     /**
