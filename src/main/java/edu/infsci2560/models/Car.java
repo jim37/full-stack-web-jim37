@@ -21,26 +21,19 @@ public class Car {
 
     private static final long serialVersionUID = 1L;
 
-    public enum CarType {
-        Unknown,
-        Strength,
-        Cardio,
-        CrossTrain
-    }
-
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     protected Long id;
     protected String title;
-    protected CarType carType;
+    protected String carType;
 
     public Car() {
         this.id = Long.MAX_VALUE;
         this.title = null;
-        this.carType = CarType.Unknown;
+        this.carType = null;
     }
 
-    public Car(Long id, String name, CarType carType) {
+    public Car(Long id, String name, String carType) {
         this.id = id;
         this.title = name;
         this.carType = carType;
@@ -78,14 +71,14 @@ public class Car {
     /**
      * @return the workoutType
      */
-    public CarType getCarType() {
+    public String getCarType() {
         return carType;
     }
 
     /**
      * @param workoutType the workoutType to set
      */
-    public void setCarType(CarType carType) {
+    public void setCarType(String carType) {
         this.carType = carType;
     }
 
