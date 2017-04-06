@@ -9,17 +9,24 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import org.apache.commons.lang3.builder.EqualsBuilder;
+import org.apache.commons.lang3.builder.HashCodeBuilder;
 
 @Entity
 public class Manager {
-    
+    private static final long serialVersionUID = 1L;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    protected Long id;
     private String firstName;
     private String lastName;
     private String email;
 	
 	protected Manager() {}
 	
-	public Manager(String firstName, String lastName, String email) {
+	public Manager(Long id, String firstName, String lastName, String email) {
+	    this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
 		this.email = email;
@@ -27,7 +34,30 @@ public class Manager {
 
     @Override
     public String toString() {
-        return String.format("Manager[firstName='%s', lastName='%s', email='%s']", getFirstName(), getLastName(), getEmail());
+        return "[ id=" + this.id + ", firstName=" + this.firstName + ", lastName=" + this.lastName + ", email=" + this.email + " ]";
+    }
+
+    @Override
+    public boolean equals(Object other) {
+        return EqualsBuilder.reflectionEquals(this, other);
+    }
+
+    @Override
+    public int hashCode() {
+        return HashCodeBuilder.reflectionHashCode(this);
+    }
+    /**
+     * @return the id
+     */
+    public Long getId() {
+        return id;
+    }
+
+    /**
+     * @param id the id to set
+     */
+    public void setId(Long id) {
+        this.id = id;
     }
 
     /**
