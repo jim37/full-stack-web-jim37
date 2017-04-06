@@ -12,9 +12,7 @@ import javax.persistence.Id;
 
 @Entity
 public class Manager {
-
-    @Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
+    
     private String firstName;
     private String lastName;
     private String email;
