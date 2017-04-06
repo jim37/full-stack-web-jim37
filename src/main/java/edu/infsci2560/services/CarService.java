@@ -6,7 +6,6 @@
 package edu.infsci2560.services;
 
 import edu.infsci2560.models.Car;
-import edu.infsci2560.models.Car.CarType;
 import edu.infsci2560.repositories.CarRepository;
 import java.util.ArrayList;
 import java.util.HashMap;
