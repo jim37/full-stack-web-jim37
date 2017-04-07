@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>User Home</title>
+        <title>Manager Home</title>
     </head>
     <body>
-        <h1 data-th-inline="text">[[${#httpServletRequest.remoteUser}]]'s CAR's!</h1>
+    <h1>My Cars</h1>
+    <h1>My Orders</h1>
+    <hr />
+    <h1 data-th-inline="text">Welcome! [[${#httpServletRequest.remoteUser}]]</h1>
 
         <div>
             <table style="border: 1px solid black">
