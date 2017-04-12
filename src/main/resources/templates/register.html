@@ -1,44 +1,65 @@
 <!DOCTYPE html>
 <html>
 
-<style>
-Table.GridOne {
- padding: 3px;
- margin: 0;
- background: lightyellow;
- border-collapse: collapse; 
- width:35%;
-}
-Table.GridOne Td { 
- padding:2px;
- border: 1px solid #ff9900;
- border-collapse: collapse;
-}
-</style>
-
-    <head>
-        <title>Register</title>
-    </head>
+<head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <title></title>
+</head>
     <body>
-         <form data-th-action="@{/manager/add}" name="addPeople" method="post">
-              <table cellpadding="0" cellspacing="0" border="1" class="GridOne">
-                  <tr>
-                           <td>First Name</td>
-	                       <td><input type="text" name="firstName" /></td>
-                  </tr>
-                  <tr>	
-	                       <td>Last Name</td> 
-	                       <td><input type="text" name="lastName" /></td>
-                  </tr>
-                  <tr>
-                           <td>Email</td>
-	                       <td><input type="text" name="email" /></td>
-                  </tr>
-                  <tr>
-                           <td colspan="2" align="center"><input type="submit" value="Register" /></td>
-                  </tr>
-              </table>
-	     </form>
+    <div class="container">
+        <div class="row clearfix">
+            <div class="col-md-15 column">
+                <nav class="navbar navbar-default" role="navigation">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button> <a class="navbar-brand" data-th-href="@{/home}">Pitt CarTrading</a>
+                    </div>
+
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <ul class="nav navbar-nav">
+                            <li>
+                                <a data-th-href="@{/cars}">Sign in</a>
+                            </li>
+                            <li class="active">
+                                <a data-th-href="@{/register}">Sign up</a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+        <div class="row clearfix">
+            <div class="col-md-6 column">
+                <form data-th-action="@{/manager/add}" name="addPeople" method="post" class="form-horizontal" role="form">
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">FirstName</label>
+                        <div class="col-sm-5">
+                            <input type="text" class="form-control" name="firstName" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">LastName</label>
+                        <div class="col-sm-5">
+                            <input type="text" class="form-control" name="lastName" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">Email</label>
+                        <div class="col-sm-5">
+                            <input type="email" class="form-control" name="email" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-10">
+                            <input type="submit" value="Sign Up"/>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
 		 
            <hr />
   

@@ -1,21 +1,70 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Spring Security Example </title>
+        <meta charset="UTF-8" />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <title></title>
     </head>
-    <body>        
-        <div data-th-if="${param.error}">
-            Invalid username and password.
+    <body>
+    <div class="container">
+        <div class="row clearfix">
+            <div class="col-md-15 column">
+                <nav class="navbar navbar-default" role="navigation">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button> <a class="navbar-brand" href="#">Pitt CarTrading</a>
+                    </div>
+
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <ul class="nav navbar-nav">
+                            <li class="active">
+                                <a data-th-href="@{/cars}">Sign in</a>
+                            </li>
+                            <li>
+                                <a data-th-href="@{/register}">Sign up</a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
         </div>
-        <div data-th-if="${param.logout}">
-            You have been logged out.
+        <div class="row clearfix">
+            <div class="col-md-6 column">
+                <div data-th-if="${param.error}">
+                    Invalid username and password.
+                </div>
+                <div data-th-if="${param.logout}">
+                    You have been logged out.
+                </div>
+                <form data-th-action="@{/login}" method="post" class="form-horizontal" role="form">
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">Username:</label>
+                        <div class="col-sm-5">
+                            <input type="text" class="form-control" name="username" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">Password:</label>
+                        <div class="col-sm-5">
+                            <input type="password" class="form-control" name="password" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-10">
+                            <div class="checkbox">
+                                <label><input type="checkbox" />Remember me</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-10">
+                            <input type="submit" value="Sign In"/>
+                        </div>
+                    </div>
+                </form>
+            </div>
         </div>
-        <form data-th-action="@{/login}" method="post">
-            <div><label> User Name: <input type="text" name="username"/> </label></div>
-            <div><label> Password: <input type="password" name="password"/> </label></div>
-            <div><input type="submit" value="Sign In"/></div>
-        </form>
-		 <hr /> 
-		<p> No account? <a data-th-href="@{/register}">Register here!</a></p>
+    </div>
     </body>
 </html>
