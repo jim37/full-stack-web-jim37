@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <title>Home</title>
+</head>
+<body>
+<div class="container">
+    <div class="row clearfix">
+        <div class="col-md-15 column">
+            <nav class="navbar navbar-default" role="navigation">
+                <div class="navbar-header">
+                    <a class="navbar-brand" data-th-href="@{/home}">Pitt CarTrading</a>
+                </div>
+
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li>
+                            <a data-th-href="@{/cars}">My Cars</a>
+                        </li>
+                        <li class="active">
+                            <a data-th-href="@{/caradd}">Add Cars</a>
+                        </li>
+                        <li>
+                            <a data-th-href="@{/order}">My Orders</a>
+                        </li>
+                    </ul>
+
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="dropdown">
+                            <a data-th-inline="text" class="dropdown-toggle" data-toggle="dropdown">Welcome! [[${#httpServletRequest.remoteUser}]]<strong class="caret"></strong></a>
+                            <ul class="dropdown-menu">
+                                <li class="divider">
+                                </li>
+                                <li >
+                                    <a>
+                                        <form data-th-action="@{/logout}" method="post">
+                                            <input type="submit" value="Sign Out"/>
+                                        </form>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+            <form data-th-action="@{/cars/add}" name="addCarForm" method="post" class="form-horizontal" role="form">
+                <div class="form-group">
+                    <label for="lastname" class="col-sm-2 control-label">Brand:</label>
+                    <div class="col-sm-5">
+                        <input type="text" class="form-control" name="title" placeholder="Please enter car's brand" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="firstname" class="col-sm-2 control-label">Car Type:</label>
+                    <div class="col-sm-5">
+                        <input type="radio" name="carType" value="SUV" checked="checked" /> SUV<br />
+                        <input type="radio" name="carType" value="Truck" /> Truck<br />
+                        <input type="radio" name="carType" value="Sports Car" /> Sports Car<br />
+                        <input type="radio" name="carType" value="Luxury Car" /> Luxury Car<br />
+                        <input type="radio" name="carType" value="Other" /> Other<br />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="lastname" class="col-sm-2 control-label">Price:</label>
+                    <div class="col-sm-5">
+                        <input type="text" class="form-control" name="price" placeholder="Please enter car's price" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="lastname" class="col-sm-2 control-label">Description:</label>
+                    <div class="col-sm-5">
+                        <textarea class="form-control" rows="3" name="description"></textarea>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <button type="submit" class="btn btn-default">Add</button>
+                    </div>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>
+</body>
+</html>
