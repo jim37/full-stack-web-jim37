@@ -21,10 +21,10 @@
 
 						<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 							<ul class="nav navbar-nav">
-								<li data-th-if="${#httpServletRequest.remoteUser}">
+								<li data-th-if="${not #httpServletRequest.remoteUser}">
 									<a data-th-href="@{/order}">Sign in</a>
 								</li>
-								<li data-th-if="${#httpServletRequest.remoteUser}">
+								<li data-th-if="${not #httpServletRequest.remoteUser}">
 									<a data-th-href="@{/register}">Sign up</a>
 								</li>
 							</ul>
