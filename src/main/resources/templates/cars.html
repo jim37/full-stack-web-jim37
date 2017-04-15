@@ -65,46 +65,15 @@
                         <td data-th-text="${car.carType}"></td>
                         <td data-th-text="${car.price}"></td>
                         <td data-th-text="${car.description}"></td>
+                        <td><a data-th-href="@{/cars/edit/{id}(id=${car.id})}">edit</a></td>
+                        <td>
+                            <form data-th-object="${car}" data-th-action="@{/cars/{id}(id=${car.id})}" data-th-method="delete">
+                                <input type="submit" value="delete" />
+                            </form>
+                        </td>
                     </tr>
                     </tbody>
                 </table>
-                <hr />
-                <form data-th-action="@{/cars/add}" name="addCarForm" method="post" class="form-horizontal" role="form">
-                    <div class="form-group">
-                        <label for="lastname" class="col-sm-2 control-label">Brand:</label>
-                        <div class="col-sm-5">
-                            <input type="text" class="form-control" name="title" placeholder="Please enter car's brand" />
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="firstname" class="col-sm-2 control-label">Car Type:</label>
-                        <div class="col-sm-5">
-                            <input type="radio" name="carType" value="SUV" checked="checked" /> SUV<br />
-                            <input type="radio" name="carType" value="Truck" /> Truck<br />
-                            <input type="radio" name="carType" value="Sports Car" /> Sports Car<br />
-                            <input type="radio" name="carType" value="Luxury Car" /> Luxury Car<br />
-                            <input type="radio" name="carType" value="Other" /> Other<br />
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="lastname" class="col-sm-2 control-label">Price:</label>
-                        <div class="col-sm-5">
-                            <input type="text" class="form-control" name="price" placeholder="Please enter car's price" />
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="lastname" class="col-sm-2 control-label">Description:</label>
-                        <div class="col-sm-5">
-                            <textarea class="form-control" rows="3" name="description"></textarea>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="col-sm-offset-2 col-sm-10">
-                            <button type="submit" class="btn btn-default">Add Car</button>
-                        </div>
-                    </div>
-                </form>
-
             </div>
         </div>
     </div>

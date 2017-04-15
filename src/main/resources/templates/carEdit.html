@@ -18,14 +18,8 @@
 
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav">
-                        <li>
-                            <a data-th-href="@{/cars}">My Cars</a>
-                        </li>
                         <li class="active">
-                            <a data-th-href="@{/caradd}">Add Cars</a>
-                        </li>
-                        <li>
-                            <a data-th-href="@{/order}">My Orders</a>
+                            <a data-th-href="@{/carEdit}">Car Edit</a>
                         </li>
                     </ul>
 
@@ -47,42 +41,62 @@
                     </ul>
                 </div>
             </nav>
-
-            <form data-th-action="@{/cars/add}" name="addCarForm" method="post" class="form-horizontal" role="form">
+            <form data-th-action="@{/cars/edit/{id}(id=${car.id})}" data-th-object="${car}" data-th-method="put" class="form-horizontal" role="form">
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Id:</label>
+                    <div class="col-sm-5">
+                        <span data-th-utext="${dvd.id}" />
+                    </div>
+                </div>
                 <div class="form-group">
                     <label class="col-sm-2 control-label">Brand:</label>
                     <div class="col-sm-5">
-                        <input type="text" class="form-control" name="title" placeholder="Please enter car's brand" />
+                        <input type="text" class="form-control" name="title" data-th-value="${dvd.title}" />
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="col-sm-2 control-label">Car Type:</label>
-                    <div class="col-sm-5">
-                        <input type="radio" name="carType" value="SUV" checked="checked" /> SUV<br />
-                        <input type="radio" name="carType" value="Truck" /> Truck<br />
-                        <input type="radio" name="carType" value="Sports Car" /> Sports Car<br />
-                        <input type="radio" name="carType" value="Luxury Car" /> Luxury Car<br />
-                        <input type="radio" name="carType" value="Other" /> Other<br />
+                    <div class="col-sm-5" data-th-each="elem: ${T(edu.infsci2560.models.Dvd.WorkoutType).values()}">
+                        <input type="radio" data-th-name="carType" data-th-value="${elem.name()}" data-th-checked="${elem} eq ${T(edu.infsci2560.models.Car.CarType).valueOf(car.workoutType)}">
+                        <span data-th-utext="${elem.name()}" />
+                        </input>
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="col-sm-2 control-label">Price:</label>
                     <div class="col-sm-5">
-                        <input type="text" class="form-control" name="price" placeholder="Please enter car's price" />
+                        <input type="text" class="form-control" name="price" data-th-value="${car.price}" />
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="col-sm-2 control-label">Description:</label>
                     <div class="col-sm-5">
-                        <textarea class="form-control" rows="3" name="description"></textarea>
+                        <textarea class="form-control" rows="3" name="description">[[${car.description}]]</textarea>
                     </div>
                 </div>
                 <div class="form-group">
                     <div class="col-sm-offset-2 col-sm-10">
-                        <button type="submit" class="btn btn-default">Add</button>
+                        <button type="submit" class="btn btn-default">Update</button>
                     </div>
                 </div>
             </form>
+
+            <br />
+            <div>
+                <table class="table">
+                    <tr>
+                        <th>Id</th>
+                        <th>Customer Id</th>
+                        <th>Stars</th>
+                    </tr>
+                    <tr data-th-each="rating : ${ratings}">
+                        <td data-th-text="${rating.ratingPk.dvdId}"></td>
+                        <td data-th-text="${rating.ratingPk.customerId}"></td>
+                        <td data-th-text="${rating.stars}"></td>
+                    </tr>
+                </table>
+            </div>
+
 
         </div>
     </div>

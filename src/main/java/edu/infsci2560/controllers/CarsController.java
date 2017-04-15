@@ -20,10 +20,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
-/**
- *
- * @author jim37
- */
+
 @Controller
 public class CarsController {
     @Autowired
@@ -33,11 +30,22 @@ public class CarsController {
     public ModelAndView index() {        
         return new ModelAndView("cars", "cars", repository.findAll());
     }
-    
-    @RequestMapping(value = "cars/add", method = RequestMethod.POST, consumes="application/x-www-form-urlencoded", produces = "application/json")
+
+    @RequestMapping(value = "cars/{id}", method = RequestMethod.GET)
+    public ModelAndView index(@PathVariable Long id) {
+        return new ModelAndView("cars", "cars", repository.findOne(id));
+    }
+
+        @RequestMapping(value = "cars/add", method = RequestMethod.POST, consumes="application/x-www-form-urlencoded", produces = "application/json")
     public ModelAndView create(@ModelAttribute @Valid Car car, BindingResult result) {
         repository.save(car);
         return new ModelAndView("cars", "cars", repository.findAll());
     }
-    
+
+    @RequestMapping(value = "cars/{id}", method = RequestMethod.DELETE, consumes="application/x-www-form-urlencoded", produces = "application/json")
+    public ModelAndView delete( @Valid Car car, BindingResult result) {
+        repository.delete(car);
+        return new ModelAndView("cars", "cars", repository.findAll());
+    }
+
 }
