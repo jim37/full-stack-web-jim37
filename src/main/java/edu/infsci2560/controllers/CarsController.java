@@ -28,12 +28,12 @@ public class CarsController {
     private CarRepository repository;
 
     @RequestMapping(value = "caradd", method = RequestMethod.GET)
-    public ModelAndView index() {
+    public ModelAndView caradd() {
         return new ModelAndView("caradd");
     }
 
     @RequestMapping(value = "order", method = RequestMethod.GET)
-    public ModelAndView index() {
+    public ModelAndView order() {
         return new ModelAndView("order");
     }
 
