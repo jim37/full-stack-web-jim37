@@ -21,15 +21,15 @@
 
 						<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 							<ul class="nav navbar-nav">
-								<li>
-									<a data-th-href="@{/cars}">Sign in</a>
+								<li data-th-if="${#httpServletRequest.remoteUser}">
+									<a data-th-href="@{/order}">Sign in</a>
 								</li>
-								<li>
+								<li data-th-if="${#httpServletRequest.remoteUser}">
 									<a data-th-href="@{/register}">Sign up</a>
 								</li>
 							</ul>
 						<form class="navbar-form navbar-left">
-							<label for="name">Car Type:</label>
+							<label >Car Type:</label>
 							<select class="form-control" name="carType">
 								<option>--Select--</option>
 								<option>SUV</option>
@@ -45,7 +45,7 @@
 									<a data-th-inline="text" class="dropdown-toggle" data-toggle="dropdown">Welcome! [[${#httpServletRequest.remoteUser}]]<strong class="caret"></strong></a>
 									<ul class="dropdown-menu">
 										<li>
-											<a >Acount</a>
+											<a data-th-href="@{/cars}">Account</a>
 										</li>
 										<li class="divider">
 										</li>

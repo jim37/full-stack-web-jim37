@@ -26,7 +26,17 @@ import org.springframework.web.servlet.ModelAndView;
 public class CarsController {
     @Autowired
     private CarRepository repository;
-    
+
+    @RequestMapping(value = "caradd", method = RequestMethod.GET)
+    public ModelAndView index() {
+        return new ModelAndView("caradd");
+    }
+
+    @RequestMapping(value = "order", method = RequestMethod.GET)
+    public ModelAndView index() {
+        return new ModelAndView("order");
+    }
+
     @RequestMapping(value = "cars", method = RequestMethod.GET)
     public ModelAndView index() {        
         return new ModelAndView("cars", "cars", repository.findAll());
