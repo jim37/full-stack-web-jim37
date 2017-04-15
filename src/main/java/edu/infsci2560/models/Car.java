@@ -24,8 +24,8 @@ public class Car {
     public enum CarType {
         SUV,
         Truck,
-        Sports Car,
-        Luxury Car,
+        SportsCar,
+        LuxuryCar,
         Other
     }
 
