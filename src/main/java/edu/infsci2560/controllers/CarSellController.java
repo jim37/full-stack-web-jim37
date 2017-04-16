@@ -25,7 +25,7 @@ public class CarSellController {
 
     @RequestMapping(value = "carsell/{carType}", method = RequestMethod.POST, consumes="application/x-www-form-urlencoded", produces = "application/json")
     public ModelAndView carsell(@PathVariable String carType) {
-        return new ModelAndView("carsell", "carsell", repository.findAll("carType"));
+        return new ModelAndView("carsell", "carsell", repository.findByCartype("carType"));
     }
 
 }
