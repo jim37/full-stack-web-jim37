@@ -20,13 +20,13 @@
 						<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 							<ul class="nav navbar-nav">
 								<li data-th-unless="${#httpServletRequest.remoteUser}">
-									<a data-th-href="@{/home}">Sign in</a>
+									<a data-th-href="@{/cars}">Sign in</a>
 								</li>
 								<li data-th-unless="${#httpServletRequest.remoteUser}">
 									<a data-th-href="@{/register}">Sign up</a>
 								</li>
 							</ul>
-						<form class="navbar-form navbar-left">
+						<form class="navbar-form navbar-left" data-th-action="@{/carsell/{carType}(carType=$(session.carType)}" name="carsell" method="post">
 							<label >Car Type:</label>
 							<select class="form-control" name="carType">
 								<option>--Select--</option>
