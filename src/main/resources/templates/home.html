@@ -9,7 +9,6 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<title>Home</title>
 </head>
-	
     <body>
 		<div class="container">
 			<div class="row clearfix">
@@ -18,11 +17,10 @@
 						<div class="navbar-header">
 							<a class="navbar-brand" data-th-href="@{/home}">Pitt CarTrading</a>
 						</div>
-
 						<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 							<ul class="nav navbar-nav">
 								<li data-th-unless="${#httpServletRequest.remoteUser}">
-									<a data-th-href="@{/order}">Sign in</a>
+									<a data-th-href="@{/home}">Sign in</a>
 								</li>
 								<li data-th-unless="${#httpServletRequest.remoteUser}">
 									<a data-th-href="@{/register}">Sign up</a>
@@ -108,4 +106,3 @@
 		</div>
 	</body>
 </html>
-

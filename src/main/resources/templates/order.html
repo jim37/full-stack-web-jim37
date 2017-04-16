@@ -15,7 +15,6 @@
                 <div class="navbar-header">
                     <a class="navbar-brand" data-th-href="@{/home}">Pitt CarTrading</a>
                 </div>
-
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav">
                         <li>
@@ -28,7 +27,6 @@
                             <a data-th-href="@{/order}">My Orders</a>
                         </li>
                     </ul>
-
                     <ul class="nav navbar-nav navbar-right">
                         <li class="dropdown">
                             <a data-th-inline="text" class="dropdown-toggle" data-toggle="dropdown">Welcome! [[${#httpServletRequest.remoteUser}]]<strong class="caret"></strong></a>
@@ -47,6 +45,23 @@
                     </ul>
                 </div>
             </nav>
+        </div>
+    </div>
+    <div class="row clearfix">
+        <div class="col-md-2 column">
+        </div>
+        <div class="col-md-8 column">
+            <h2>
+                Heading
+            </h2>
+            <p>
+                Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
+            </p>
+            <p>
+                <a class="btn" href="#">View details »</a>
+            </p>
+        </div>
+        <div class="col-md-2 column">
         </div>
     </div>
 </div>

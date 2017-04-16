@@ -18,7 +18,6 @@
                 <div class="navbar-header">
                     <a class="navbar-brand" data-th-href="@{/home}">Pitt CarTrading</a>
                 </div>
-
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <form class="navbar-form navbar-left">
                         <label for="name">Car Type:</label>
@@ -56,6 +55,27 @@
             </nav>
         </div>
     </div>
+    <div class="row clearfix" data-th-each="car : ${cars}">
+        <div class="col-md-2 column">
+        </div>
+        <div class="col-md-8 column">
+            <h2>
+                [[${#car.id}]]:[[${#car.title}]] ([[${#car.carType}]])
+            </h2>
+            <p>
+                [[${#car.description}]]
+            </p>
+            <p>
+                Price: $[[${#car.price}]]
+            </p>
+            <p>
+                <a class="btn" href="#">Buy »</a>
+            </p>
+        </div>
+        <div class="col-md-2 column">
+        </div>
+    </div>
+
 </div>
 </body>
 </html>
