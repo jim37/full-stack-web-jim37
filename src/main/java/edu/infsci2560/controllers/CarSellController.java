@@ -16,7 +16,7 @@ import org.springframework.data.domain.PageRequest;
 @Controller
 public class CarSellController {
     @Autowired
-    private CarRepository carRepository;
+    private CarRepository repository;
 
     @RequestMapping(value = "carsell/{carType}", method = RequestMethod.POST, consumes="application/x-www-form-urlencoded", produces = "application/json")
     public ModelAndView carsell(@PathVariable String carType) {
