@@ -49,7 +49,7 @@ public class CarsController {
 
     @RequestMapping(value = "carsell", method = RequestMethod.GET)
     public ModelAndView search(@Valid Car.CarType carType) {
-        if(carType != "--Select--")
+        if(carType != --Select--)
             return new ModelAndView("carsell", "carsell", repository.findBycarType(carType));
         else
             return new ModelAndView("carsell", "carsell", repository.findAll());
