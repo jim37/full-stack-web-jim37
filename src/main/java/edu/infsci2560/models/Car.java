@@ -26,7 +26,8 @@ public class Car {
         Truck,
         SportsCar,
         LuxuryCar,
-        Other
+        Other,
+        --Select--
     }
 
     @Id
