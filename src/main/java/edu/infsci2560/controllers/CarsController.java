@@ -49,7 +49,10 @@ public class CarsController {
 
     @RequestMapping(value = "carsell", method = RequestMethod.GET)
     public ModelAndView search(@Valid Car.CarType carType) {
-        return new ModelAndView("carsell", "carsell", repository.findBycarType(carType));
+        if(carType != "--Select--")
+            return new ModelAndView("carsell", "carsell", repository.findBycarType(carType));
+        else
+            return new ModelAndView("carsell", "carsell", repository.findAll());
     }
 
         @RequestMapping(value = "cars/add", method = RequestMethod.POST, consumes="application/x-www-form-urlencoded", produces = "application/json")

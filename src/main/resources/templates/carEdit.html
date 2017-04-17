@@ -51,7 +51,7 @@
                 <div class="form-group">
                     <label class="col-sm-2 control-label">Brand:</label>
                     <div class="col-sm-5">
-                        <input type="text" class="form-control" name="title" data-th-value="${dvd.title}" />
+                        <input type="text" class="form-control" name="title" data-th-value="${car.title}" />
                     </div>
                 </div>
                 <div class="form-group">
@@ -71,7 +71,7 @@
                 <div class="form-group">
                     <label class="col-sm-2 control-label">Description:</label>
                     <div class="col-sm-5">
-                        <textarea class="form-control" rows="3" name="description">[[${car.description}]]</textarea>
+                        <textarea class="form-control" rows="3" name="description" data-th-text="${car.description}"></textarea>
                     </div>
                 </div>
                 <div class="form-group">
