@@ -27,7 +27,7 @@ public class Car {
         SportsCar,
         LuxuryCar,
         Other,
-        --Select--
+        Select
     }
 
     @Id
