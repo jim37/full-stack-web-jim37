@@ -57,7 +57,7 @@
                 <div class="form-group">
                     <label class="col-sm-2 control-label">Car Type:</label>
                     <div class="col-sm-5" data-th-each="elem: ${T(edu.infsci2560.models.Dvd.WorkoutType).values()}">
-                        <input type="radio" data-th-name="carType" data-th-value="${elem.name()}" data-th-checked="${elem} eq ${T(edu.infsci2560.models.Car.CarType).valueOf(car.workoutType)}">
+                        <input type="radio" data-th-name="carType" data-th-value="${elem.name()}" data-th-checked="${elem} eq ${T(edu.infsci2560.models.Car.CarType).valueOf(car.carType)}">
                         <span data-th-utext="${elem.name()}" />
                         </input>
                     </div>
