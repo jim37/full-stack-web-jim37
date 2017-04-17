@@ -59,14 +59,11 @@
         <div class="col-md-2 column">
         </div>
         <div class="col-md-8 column">
-            <h2>
-                [[${#car.id}]]:[[${#car.title}]] ([[${#car.carType}]])
+            <h2 data-th-text="${car.id} + ': ' + ${car.carType}">
             </h2>
-            <p>
-                [[${#car.description}]]
+            <p data-th-text="${car.description}">
             </p>
-            <p>
-                Price: $[[${#car.price}]]
+            <p data-th-text="'Price: ' + ${car.price}">
             </p>
             <p>
                 <a class="btn" href="#">Buy »</a>
