@@ -14,5 +14,5 @@ import java.util.*;
  * @author kolobj
  */
 public interface CarRepository extends PagingAndSortingRepository<Car, Long> {
-    List<Car> findBycarType(CarType carType);
+    List<Car> findBycarType(Car.CarType carType);
 }

@@ -48,7 +48,7 @@ public class CarsController {
     }
 
     @RequestMapping(value = "carsell", method = RequestMethod.GET)
-    public ModelAndView search(@Valid CarType carType) {
+    public ModelAndView search(@Valid Car.CarType carType) {
         return new ModelAndView("carsell", "carsell", repository.findBycarType(carType));
     }
 
