@@ -26,15 +26,15 @@
 									<a data-th-href="@{/register}">Sign up</a>
 								</li>
 							</ul>
-						<form class="navbar-form navbar-left" data-th-action="@{/carsell/{carType}(carType=$(session.carType)}" name="carsell" method="post">
+						<form class="navbar-form navbar-left" data-th-action="@{/carsell/{carType}(carType=${session.carType})}" name="carsell" method="post">
 							<label >Car Type:</label>
 							<select class="form-control" name="carType">
 								<option>--Select--</option>
-								<option>SUV</option>
-								<option>Truck</option>
-								<option>SportsCar</option>
-								<option>LuxuryCar</option>
-								<option>Other</option>
+								<option name="carType">SUV</option>
+								<option name="carType">Truck</option>
+								<option name="carType">SportsCar</option>
+								<option name="carType">LuxuryCar</option>
+								<option name="carType">Other</option>
 							</select>
 							<button type="submit" class="btn btn-default">Search</button>
 						</form>
