@@ -47,6 +47,11 @@ public class CarsController {
         return new ModelAndView("cars", "cars", repository.findOne(id));
     }
 
+    @RequestMapping(value = "carsell", method = RequestMethod.GET)
+    public ModelAndView search(@PathVariable String carType) {
+        return new ModelAndView("carsell", "carsell", repository.findBycarType("carType"));
+    }
+
         @RequestMapping(value = "cars/add", method = RequestMethod.POST, consumes="application/x-www-form-urlencoded", produces = "application/json")
     public ModelAndView create(@ModelAttribute @Valid Car car, BindingResult result) {
         repository.save(car);
