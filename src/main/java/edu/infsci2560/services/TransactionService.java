@@ -6,7 +6,6 @@
 package edu.infsci2560.services;
 
 import edu.infsci2560.models.Transaction;
-import edu.infsci2560.models.Transaction.TransactionType;
 import edu.infsci2560.repositories.TransactionRepository;
 import java.util.ArrayList;
 import java.util.HashMap;
