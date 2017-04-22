@@ -54,11 +54,14 @@
                         <input type="text" class="form-control" name="title" data-th-value="${car.title}" />
                     </div>
                 </div>
-                <div class="form-group" >
+                <div class="form-group">
                     <label class="col-sm-2 control-label">Car Type:</label>
-                    <div class="col-sm-5" data-th-each="elem: ${T(edu.infsci2560.models.Car.CarType).values()}">
-                        <input type="radio" data-th-name="carType" data-th-value="${elem.name()}" data-th-checked="${elem} eq ${T(edu.infsci2560.models.Car.CarType).valueOf(car.carType)}" />
-                        <p data-th-text="${elem.name()}"></p><br />
+                    <div class="col-sm-5">
+                        <input type="radio" name="carType" value="SUV" checked="checked" /> SUV<br />
+                        <input type="radio" name="carType" value="Truck" /> Truck<br />
+                        <input type="radio" name="carType" value="SportsCar" /> Sports Car<br />
+                        <input type="radio" name="carType" value="LuxuryCar" /> Luxury Car<br />
+                        <input type="radio" name="carType" value="Other" /> Other<br />
                     </div>
                 </div>
                 <div class="form-group">
