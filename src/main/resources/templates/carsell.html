@@ -62,7 +62,6 @@
         </h1>
     </div>
     <div class="row clearfix" data-th-each="car : ${carsell}">
-        <form data-th-action="@{/order/add/{id}(id=${car.id})}" data-th-object="${car}" data-th-method="post">
         <div class="col-md-3 column">
         </div>
         <div class="col-md-6 column">
@@ -75,12 +74,13 @@
             <p data-th-text="'Price: $' + ${car.price}">
             </p>
             <p>
-                <button type="submit" class="btn btn-default">Add to Cart</button>
+            <form data-th-action="@{/order/add/{id}(id=${car.id})}" data-th-object="${car}" data-th-method="put">
+            <button type="submit" class="btn btn-default">Add to Cart</button>
+            </form>
             </p>
         </div>
         <div class="col-md-3 column">
         </div>
-        </form>
     </div>
 
 </div>
