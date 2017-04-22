@@ -5,6 +5,7 @@
  */
 package edu.infsci2560.models;
 
+import java.util.Date;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -21,33 +22,31 @@ public class Transaction {
 
     private static final long serialVersionUID = 1L;
 
-    public enum TransactionType {
-        Unknown,
-        Business,
-        Individual
-    }
-
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     protected Long id;
-    protected String time;
-    protected TransactionType transactionType;
+    protected Date time;
+    protected Long carId;
+    protected String price;
 
     public Transaction() {
         this.id = Long.MAX_VALUE;
         this.time = null;
-        this.transactionType = TransactionType.Unknown;
+        this.carId = null;
+        this.price = null;
     }
 
-    public Transaction(Long id, String tim, TransactionType transactionType) {
+    public Transaction(String carId, String price) {
         this.id = id;
-        this.time = tim;
-        this.transactionType = transactionType;
+        Date now = new Date();
+        this.time = now;
+        this.carId = carId;
+        this.price = price;
     }
 
     @Override
     public String toString() {
-        return "[ id=" + this.id + ", time=" + this.time + ", transactionType=" + this.transactionType + " ]";
+        return "[ id=" + this.id + ", time=" + this.time + ", carId=" + this.carId + ", price=" + this.price + " ]";
     }
 
     @Override
@@ -60,46 +59,36 @@ public class Transaction {
         return HashCodeBuilder.reflectionHashCode(this);
     }
 
-    /**
-     * @return the tim
-     */
-    public String getTime() {
+    public Date getTime() {
         return time;
     }
 
-    /**
-     * @param time the tim to set
-     */
-    public void setTime(String time) {
+    public void setTime(Date time) {
         this.time = time;
     }
 
-    /**
-     * @return the transactionType
-     */
-    public TransactionType getTransactionType() {
-        return transactionType;
-    }
-
-    /**
-     * @param transactionType the transactionType to set
-     */
-    public void setTransactionType(TransactionType transactionType) {
-        this.transactionType = transactionType;
-    }
-
-    /**
-     * @return the id
-     */
     public Long getId() {
         return id;
     }
 
-    /**
-     * @param id the id to set
-     */
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public Long getCarId() {
+        return carId;
+    }
+
+    public void setCarId(Long carId) {
+        this.carId = carId;
+    }
+
+    public String getPrice() {
+        return price;
+    }
+
+    public void setPrice(String price) {
+        this.price = price;
     }
 
 }
