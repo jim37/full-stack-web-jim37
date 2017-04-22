@@ -41,7 +41,7 @@ public class TransactionController {
     @RequestMapping(value = "order/add/{id}", method = RequestMethod.PUT, consumes="application/x-www-form-urlencoded", produces = "application/json")
     public ModelAndView create(@PathVariable Long id) {
         Car car = carRepository.findOne(id);
-        Transaction order = new Transaction(id, car.price);
+        Transaction order = new Transaction(id, car.getPrice());
         repository.save(order);
         return new ModelAndView("order", "order", repository.findAll());
     }
