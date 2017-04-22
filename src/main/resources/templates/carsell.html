@@ -61,10 +61,10 @@
             Cars for sell
         </h1>
     </div>
+    <form data-th-action="@{/order/add/{id}(id=${car.id})}" data-th-object="${car}" data-th-method="post">
     <div class="row clearfix" data-th-each="car : ${carsell}">
         <div class="col-md-3 column">
         </div>
-        <form data-th-action="@{/order/add/{id}(id=${car.id})}" data-th-object="${car}" method="post">
         <div class="col-md-6 column">
             <h2 data-th-text="'ID: ' + ${car.id}">
             </h2>
@@ -78,10 +78,10 @@
                 <button type="submit" class="btn btn-default">Add to Cart</button>
             </p>
         </div>
-        </form>
         <div class="col-md-3 column">
         </div>
     </div>
+    </form>
 
 </div>
 </body>
