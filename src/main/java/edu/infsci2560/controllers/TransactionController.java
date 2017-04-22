@@ -42,6 +42,7 @@ public class TransactionController {
     @RequestMapping(value = "order/add/{id}", method = RequestMethod.PUT, consumes="application/x-www-form-urlencoded", produces = "application/json")
     public ModelAndView delete( @Valid Car car, BindingResult result) {
         Transaction order = new Transaction(car.getId(), car.getPrice());
+        repository.save(order);
         return new ModelAndView("order", "order", repository.findAll());
     }
     

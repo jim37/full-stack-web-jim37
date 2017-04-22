@@ -59,7 +59,7 @@
                     <div class="col-sm-5" data-th-each="elem: ${T(edu.infsci2560.models.Car.CarType).values()}">
                         <input type="radio" data-th-name="carType" data-th-value="${elem.name()}" data-th-checked="${elem} eq ${T(edu.infsci2560.models.Car.CarType).valueOf(car.carType)}">
                         <span data-th-utext="${elem.name()}" />
-                        </input>
+                        </input> <br />
                     </div>
                 </div>
                 <div class="form-group">
