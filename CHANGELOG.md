@@ -7,6 +7,16 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 ### Added
 - TBD.
 
+
+## [v1.5] - 2017-04-22
+### Added
+- Added some web pages: carEdit.html, order.html, caradd.html
+- Created additional entities: Rating.java, RatingPK.java
+- Created additional controller: CarEditController.java
+- Created additional repository: RatingRepository.java
+- added new functions in CarsController.java
+- Changed the style of Home Page
+
 ## [v1.4] - 2017-03-25
 ### Added
 - Create 3 additional Entities: Manager.java, Sales.java, Transactions.java
@@ -41,6 +51,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 - Deployed to Heroku.
 
 [Unreleased]: https://github.com/jim37/full-stack-web-jim37/compare/v1.2...HEAD
+[v1.5]: https://github.com/jim37/full-stack-web-jim37/compare/v1.4...v1.5
+[v1.4]: https://github.com/jim37/full-stack-web-jim37/compare/v1.3...v1.4
 [v1.3]: https://github.com/jim37/full-stack-web-jim37/compare/v1.2...v1.3
 [v1.2]: https://github.com/jim37/full-stack-web-jim37/compare/v1.1...v1.2
 [v1.1]: https://github.com/jim37/full-stack-web-jim37/compare/...v1.1
