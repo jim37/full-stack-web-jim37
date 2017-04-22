@@ -37,10 +37,12 @@ public class TransactionController {
     public ModelAndView index() {        
         return new ModelAndView("order", "order", repository.findAll());
     }
-    
-    @RequestMapping(value = "order/add/{id}", method = RequestMethod.PUT)
-    public ModelAndView create(@PathVariable Long id) {
-        return new ModelAndView("order", "order", carRepository.findOne(id));
+
+
+    @RequestMapping(value = "order/add/{id}", method = RequestMethod.PUT, consumes="application/x-www-form-urlencoded", produces = "application/json")
+    public ModelAndView delete( @Valid Car car, BindingResult result) {
+        Transaction order = new Transaction(car.getId(), car.getPrice());
+        return new ModelAndView("order", "order", repository.findAll());
     }
     
 }
