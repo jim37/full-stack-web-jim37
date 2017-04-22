@@ -32,11 +32,6 @@ public class CarsController {
         return new ModelAndView("caradd");
     }
 
-    @RequestMapping(value = "order", method = RequestMethod.GET)
-    public ModelAndView order() {
-        return new ModelAndView("order");
-    }
-
     @RequestMapping(value = "cars", method = RequestMethod.GET)
     public ModelAndView index() {        
         return new ModelAndView("cars", "cars", repository.findAll());
