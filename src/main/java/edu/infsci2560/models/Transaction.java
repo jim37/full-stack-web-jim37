@@ -36,7 +36,7 @@ public class Transaction {
         this.price = null;
     }
 
-    public Transaction(String carId, String price) {
+    public Transaction(Long carId, String price) {
         this.id = id;
         Date now = new Date();
         this.time = now;

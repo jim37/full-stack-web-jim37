@@ -35,7 +35,7 @@ public class Car {
     protected Long id;
     protected String title;
     protected CarType carType;
-    protected String price;
+    private String price;
     protected String description;
 
     public Car() {
