@@ -7,7 +7,7 @@ package edu.infsci2560.controllers;
 
 import edu.infsci2560.models.Transaction;
 import edu.infsci2560.repositories.TransactionRepository;
-\import edu.infsci2560.models.Car;
+import edu.infsci2560.models.Car;
 import edu.infsci2560.repositories.CarRepository;
 import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,16 +30,17 @@ import org.springframework.web.servlet.ModelAndView;
 public class TransactionController {
     @Autowired
     private TransactionRepository repository;
+    private CarRepository carRepository;
     
     @RequestMapping(value = "order", method = RequestMethod.GET)
     public ModelAndView index() {        
-        return new ModelAndView("transactions", "transactions", repository.findAll());
+        return new ModelAndView("order", "order", repository.findAll());
     }
     
     @RequestMapping(value = "order/add/{id}", method = RequestMethod.POST, consumes="application/x-www-form-urlencoded", produces = "application/json")
     public ModelAndView create(@PathVariable Long id) {
         Car car = carRepository.findOne(id);
-        Transaction order = new Transaction(car.id, car.price)
+        Transaction order = new Transaction(car.id, car.price);
         repository.save(order);
         return new ModelAndView("order", "order", repository.findAll());
     }
